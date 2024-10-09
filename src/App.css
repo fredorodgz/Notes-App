@@ -1,20 +1,32 @@
+/* General Styling */
 .App {
   text-align: center;
   margin-top: 50px;
   font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .input-container {
   margin-bottom: 20px;
 }
 
-input {
+input[type="text"] {
   padding: 10px;
   font-size: 16px;
-  width: 300px;
+  width: 500px; /* Increased width */
   margin-right: 10px;
 }
 
+textarea {
+  padding: 10px;
+  font-size: 16px;
+  width: 500px;
+  height: 200px; /* Larger input area for text */
+  margin-right: 10px;
+}
 button {
   padding: 10px 20px;
   font-size: 16px;
@@ -23,38 +35,77 @@ button {
   color: white;
   border: none;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #0056b3;
 }
 
+/* Notes Section Styling */
 .notes-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 .note {
   background: #f9f9f9;
-  padding: 10px 20px;
+  padding: 15px 20px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
-  width: 400px;
+  align-items: center;
+  width: 100%; /* Make it responsive */
+  max-width: 500px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.note p {
+  margin: 0;
+  font-size: 16px;
+  flex: 1;
 }
 
 .note button {
   background-color: #dc3545;
-  padding: 5px 10px;
+  padding: 8px 12px;
   border: none;
   border-radius: 5px;
   color: white;
   cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .note button:hover {
   background-color: #c82333;
+}
+
+/* Search Bar Styling */
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  width: 350px;
+}
+
+@media (max-width: 768px) {
+  /* Responsive adjustments */
+  input {
+    width: 100%; /* Full width on smaller screens */
+    margin-right: 0;
+  }
+
+  .note {
+    width: 90%; /* Make note cards fit the screen on smaller devices */
+  }
+
+  .search-container input {
+    width: 100%; /* Adjust search input on smaller screens */
+  }
 }
