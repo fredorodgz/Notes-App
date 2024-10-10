@@ -43,7 +43,7 @@ input[type="text"] {
   width: 500px; /* Increased width */
   margin-right: 10px;
   border-radius: 15px;
-  border: 1px solid white;
+  border: 2px solid black;
 }
 
 textarea {
@@ -56,6 +56,7 @@ textarea {
   border: 1px solid white;
   margin-top: 10px;
   margin-bottom: 10px;
+  outline: solid 2px black;
 }
 button {
   padding: 10px 20px;
@@ -113,13 +114,14 @@ button:hover {
   background: #f8f3dc;
   padding: 15px 20px;
   margin: 10px 0;
-  border-radius: 5px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items:flex-start;
   width: 400px; /* Make it responsive */
   /* max-width: 500px; */
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  outline : solid 2px black;
 }
 
 .note p.note-title{
