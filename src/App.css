@@ -43,7 +43,7 @@ input[type="text"] {
   width: 500px; /* Increased width */
   margin-right: 10px;
   border-radius: 15px;
-  border: 1px solid white;
+  border: 2px solid black;
 }
 
 textarea {
@@ -53,7 +53,7 @@ textarea {
   height: 200px; /* Larger input area for text */
   margin-right: 10px;
   border-radius: 15px;
-  border: 1px solid white;
+  border: 2px solid black;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -120,6 +120,7 @@ button:hover {
   width: 400px; /* Make it responsive */
   /* max-width: 500px; */
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  outline: 2px solid black;
 }
 
 .note p.note-title{
