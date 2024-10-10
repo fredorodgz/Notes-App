@@ -80,9 +80,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Notes App </h1>
-      
       <div className="search-container">
+        <h1 id='app-title'>Notes</h1>
         <input
           type="text"
           value={searchTerm}
@@ -90,67 +89,79 @@ function App() {
           placeholder="Search notes or categories..."
         />
       </div>
-
-      <div className="input-container">
-        <input
-          type="text"
-          value={title}
-          onChange={handleTitleChange}
-          placeholder="Enter title"
-        />
-        <textarea
-          value={input}
-          onChange={handleInputChange}
-          placeholder="Type your note here"
-        />
-        <input
-          type="text"
-          value={category}
-          onChange={handleCategoryChange}
-          placeholder="Enter category"
-        />
-        <button onClick={handleAddNote}>Add Note</button>
-      </div>
-
-      <div className="notes-container">
-        {filteredNotes.length === 0 ? (
-          <p>No notes found</p>
-        ) : (
-          filteredNotes.map((note, index) => (
-            <div className="note" key={index}>
-              {editingIndex === index ? (
-                <>
-                  <input
-                    type="text"
-                    value={editTitle}
-                    onChange={handleEditTitleChange}
-                    placeholder="Edit title"
-                  />
-                  <textarea
-                    value={editInput}
-                    onChange={handleEditInputChange}
-                    placeholder="Edit note"
-                  />
-                  <input
-                    type="text"
-                    value={editCategory}
-                    onChange={handleEditCategoryChange}
-                    placeholder="Edit category"
-                  />
-                  <button onClick={() => handleSaveEdit(index)}>Save</button>
-                  <button onClick={() => setEditingIndex(null)}>Cancel</button>
-                </>
-              ) : (
-                <>
-                  <p className="note-title">{note.title}</p>
-                  <p>{note.text} <strong>({note.category})</strong></p>
-                  <button onClick={() => handleDeleteNote(index)}>Delete</button>
-                  <button onClick={() => handleEditClick(index)}>Edit</button>
-                </>
-              )}
-            </div>
-          ))
-        )}
+      <div className="both-containers">
+        <div className="input-main">
+          <div className="input-container">
+            <input
+              type="text"
+              value={title}
+              onChange={handleTitleChange}
+              placeholder="Enter title"
+            />
+            <textarea
+              value={input}
+              onChange={handleInputChange}
+              placeholder="Type your note here"
+            />
+            <input
+              type="text"
+              value={category}
+              onChange={handleCategoryChange}
+              placeholder="Enter category"
+            />
+            <button onClick={handleAddNote}>Add Note</button>
+          </div>
+        </div>
+        <div className="all-notes-container">
+          <h1 id='notes-title'>My Notes</h1>
+          <div className="notes-container">
+            {filteredNotes.length === 0 ? (
+              <p>No notes found</p>
+            ) : (
+              filteredNotes.map((note, index) => (
+                <div className="note" key={index}>
+                  {editingIndex === index ? (
+                    <>
+                    <div className="editing-note-cont">
+                      <input
+                        type="text"
+                        value={editTitle}
+                        onChange={handleEditTitleChange}
+                        placeholder="Edit title"
+                      />
+                      <textarea
+                        value={editInput}
+                        onChange={handleEditInputChange}
+                        placeholder="Edit note"
+                      />
+                      <input
+                        type="text"
+                        value={editCategory}
+                        onChange={handleEditCategoryChange}
+                        placeholder="Edit category"
+                      />
+                      <div className="note-buttons">
+                        <button id="save-button" onClick={() => handleSaveEdit(index)}>Save</button>
+                        <button id="cancel-button" onClick={() => setEditingIndex(null)}>Cancel</button>
+                      </div>
+                    </div>
+                    </>
+                  ) : (
+                    <>
+                      <p className="note-title"><strong>{note.title}</strong></p>
+                      <p className="note-text">{note.text}</p>
+                      <p className="note-category"><strong>{note.category}</strong></p>
+                      <div className="note-buttons">
+                        <button id="delete-button" onClick={() => handleDeleteNote(index)}>Delete</button>
+                        <button id="edit-button" onClick={() => handleEditClick(index)}>Edit</button>
+                      </div>
+                    </>
+                  )}
+                </div>
+              ))
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

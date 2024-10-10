@@ -1,67 +1,144 @@
 /* General Styling */
 .App {
-  text-align: center;
   margin-top: 50px;
-  font-family: Arial, sans-serif;
+  text-align: center;
   padding: 20px;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin-left: auto;
   margin-right: auto;
+
+}
+
+.both-containers {
+  display: flex;
+  justify-self:flex-start;
+  justify-content: space-between;
+}
+#app-title {
+  font-family: 'Roboto', sans-serif;
+  color: #165a1c;
+  margin-top: 5px;
+}
+
+.input-main{
+  display: flex;
+  justify-content: flex-start;
+
 }
 
 .input-container {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-left: 200px;
+
 }
 
+
 input[type="text"] {
-  padding: 10px;
+  padding: 15px;
   font-size: 16px;
   width: 500px; /* Increased width */
   margin-right: 10px;
+  border-radius: 15px;
+  border: 1px solid white;
 }
 
 textarea {
-  padding: 10px;
+  padding: 15px;
   font-size: 16px;
   width: 500px;
   height: 200px; /* Larger input area for text */
   margin-right: 10px;
+  border-radius: 15px;
+  border: 1px solid white;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #007BFF;
+  background-color: #44ac4c;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #165a1c;
 }
 
 /* Notes Section Styling */
-.notes-container {
+
+#notes-title {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 20px;
+  color: #165a1c;
+
+}
+
+.all-notes-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  padding-right: 60px;
+  padding-left: 60px;
+  margin-right: 200px;
+
+}
+
+.notes-container {
+  align-items: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.notes-container p{
+  display: flex;
+  justify-content: center;
   align-items: center;
   margin-top: 20px;
 }
 
 .note {
-  background: #f9f9f9;
+  background: #f8f3dc;
   padding: 15px 20px;
   margin: 10px 0;
-  border: 1px solid #ccc;
   border-radius: 5px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%; /* Make it responsive */
-  max-width: 500px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  align-items:flex-start;
+  width: 400px; /* Make it responsive */
+  /* max-width: 500px; */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.note p.note-title{
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.note p.note-text{
+  font-size: 20px;
+  display: flex;
+  justify-content:flex-start;
+}
+
+.note p.note-category{
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: rgb(244, 193, 135);
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .note p {
@@ -70,24 +147,83 @@ button:hover {
   flex: 1;
 }
 
-.note button {
-  background-color: #dc3545;
-  padding: 8px 12px;
+.note button{
+  padding: 5px 7px;
+  font-size: 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   color: white;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 15px;
   transition: background-color 0.3s ease;
+
+}
+#delete-button {
+  background-color: #e54c34;
+}
+
+#delete-button:hover {
+  background-color: #c82333;
+}
+#edit-button {
+  background-color: #797979;
+}
+
+#edit-button:hover {
+  background-color: #4d4d4d;
+}
+
+.note-buttons{
+  display: flex;
+  flex-direction: column;
 }
 
 .note button:hover {
-  background-color: #c82333;
+  background-color: #165a1c;
 }
 
+.editing-note-cont{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  margin-top: 20px;
+}
+
+.editing-note-cont input{
+  width: 300px;
+}
+
+.editing-note-cont textarea{
+  width: 300px;
+  height: 100px;
+  margin-top: 10px;
+}
+
+#save-button {
+  background-color: #44ac4c;
+}
+
+#save-button:hover {
+  background-color: #165a1c;
+}
+
+#cancel-button {
+  background-color: #797979;
+}
+
+#cancel-button:hover {
+  background-color: #4d4d4d;
+}
 /* Search Bar Styling */
 .search-container {
   margin-bottom: 20px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  
 }
 
 .search-container input {
@@ -105,7 +241,10 @@ button:hover {
     width: 90%; /* Make note cards fit the screen on smaller devices */
   }
 
+
+
   .search-container input {
     width: 100%; /* Adjust search input on smaller screens */
+
   }
 }
