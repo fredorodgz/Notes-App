@@ -82,6 +82,7 @@ function App() {
     <div className="App">
       <div className="search-container">
         <h1 id='app-title'>Notes</h1>
+  {/* Search bar  */}
         <input
           type="text"
           value={searchTerm}
@@ -89,6 +90,7 @@ function App() {
           placeholder="Search notes or categories..."
         />
       </div>
+  {/* Add note */}
       <div className="both-containers">
         <div className="input-main">
           <div className="input-container">
@@ -112,6 +114,7 @@ function App() {
             <button onClick={handleAddNote}>Add Note</button>
           </div>
         </div>
+  {/* Display all the notes  */}
         <div className="all-notes-container">
           <h1 id='notes-title'>My Notes</h1>
           <div className="notes-container">
